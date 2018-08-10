@@ -5,11 +5,16 @@
  */
 package iftm.ec.lfa;
 
+import iftm.ec.lfa.a.A;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author vinicius
  */
-public class Home extends javax.swing.JFrame {
+public class Home extends javax.swing.JFrame { 
+    
+    private boolean correto = false;
 
     /**
      * Creates new form Home
@@ -40,6 +45,11 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Autômato");
 
         btnAvaliar.setText("Avaliar");
+        btnAvaliar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAvaliarActionPerformed(evt);
+            }
+        });
 
         campoSentenca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +114,26 @@ public class Home extends javax.swing.JFrame {
     private void comboAutomatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboAutomatoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboAutomatoActionPerformed
+
+    private void btnAvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvaliarActionPerformed
+        // TODO add your handling code here:
+        switch(comboAutomato.getSelectedItem().toString()) {
+            case "A":
+                correto = A.avaliar(campoSentenca.getText());
+        }
+        
+        if(correto){
+            JOptionPane.showMessageDialog(this, 
+                "Sentença " + campoSentenca.getText() + 
+                " está correta para o autômato " + 
+                comboAutomato.getSelectedItem().toString(), "Sucesso!", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, 
+                "Sentença " + campoSentenca.getText() + 
+                " está incorreta para o autômato " + 
+                comboAutomato.getSelectedItem().toString(), "Falha!", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAvaliarActionPerformed
 
     /**
      * @param args the command line arguments
