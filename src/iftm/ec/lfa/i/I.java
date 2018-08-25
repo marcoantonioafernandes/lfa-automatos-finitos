@@ -3,41 +3,40 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package iftm.ec.lfa.a;
+package iftm.ec.lfa.i;
 
 /**
  *
  * @author vinicius
  */
-public class A {
+public class I {
     
-    public static boolean avaliar(String s) {
+     public static boolean avaliar(String s) {
         char c;
         int e = 1;
         boolean erro = false;
         for(int i = 0; i < s.length() && !erro; i++) {
             c = s.charAt(i);
+            
             switch(e) {
                 case 1:
-                    if(c == 'a') e = 2;
+                    if(Character.isLetter(c) && Character.isLowerCase(c)) e = 2;
                     else erro = true;
                     break;
                   
                 case 2:
-                    if (c == 'a') e = 2;
-                    else if (c == 'b') e = 3;
+                    if (Character.isDigit(c)) break;
+                    else if (Character.isLetter(c)) {
+                        if(Character.isLowerCase(c)) break;
+                        else erro = true;
+                    }
                     else erro = true;
-                    break;
-                    
-                case 3:
-                    if (c == 'a') e = 2;
-                    else if (c == 'b') e = 3;
-                    else erro = true;
-                    break;
+                    break;   
+                
             }
         }
         
-        if(erro || (e != 3)) {
+        if(erro || (e != 2)) {
             return false;
         } else {
             return true;
