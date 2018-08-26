@@ -6,8 +6,12 @@
 package iftm.ec.lfa;
 
 import iftm.ec.lfa.a.A;
+import iftm.ec.lfa.b.B;
 import iftm.ec.lfa.c.C;
+import iftm.ec.lfa.d.D;
 import iftm.ec.lfa.e.E;
+import iftm.ec.lfa.f.F;
+import iftm.ec.lfa.h.H;
 import iftm.ec.lfa.i.I;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -131,15 +135,31 @@ public class Home extends javax.swing.JFrame {
                 correto = A.avaliar(campoSentenca.getText());
                 break;
                 
+            case "B":
+                correto = B.avaliar(campoSentenca.getText());
+                break;
+                
             case "C":
                 correto = C.avaliar(campoSentenca.getText());
+                break;
+                
+            case "D":
+                correto = D.avaliar(campoSentenca.getText());
                 break;
                 
             case "E":
                 correto = E.avaliar(campoSentenca.getText());
                 break;
                 
+            case "F":
+                correto = F.avaliar(campoSentenca.getText());
+                break;
+                
             case "G":
+                break;
+            
+            case "H":
+                correto = H.avaliar(campoSentenca.getText());
                 break;
                 
             case "I":
