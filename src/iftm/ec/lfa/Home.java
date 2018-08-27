@@ -13,6 +13,7 @@ import iftm.ec.lfa.e.E;
 import iftm.ec.lfa.f.F;
 import iftm.ec.lfa.h.H;
 import iftm.ec.lfa.i.I;
+import iftm.ec.lfa.j.J;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -164,6 +165,10 @@ public class Home extends javax.swing.JFrame {
                 
             case "I":
                 correto = I.avaliar(campoSentenca.getText());
+                break;
+                
+            case "J":
+                correto = J.avaliar(campoSentenca.getText());
                 break;
         }
         
