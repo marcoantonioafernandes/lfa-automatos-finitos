@@ -38,36 +38,32 @@ public class C {
                     break;
                     
                 case 5:
-                    if (c == 'a') e = 6;
-                    else if (c == 'b') e = 5;
-                    else erro = true;
-                    break;
-                    
-                case 6:
-                    if (c == 'b') e = 7;
-                    else if (c == 'a') e = 6;
-                    else erro = true;
-                    break;
-                
-                case 7:
-                    if (c == 'a') e = 8;
+                    if (c == 'a') e = 5;
                     else if (c == 'b') e = 6;
                     else erro = true;
                     break;
                     
-                case 8:
-                    if (c == 'b') e = 9;
-                    else if (c == 'a') e = 6;
+                case 6:
+                    if (c == 'a') e = 7;
+                    else if (c == 'b') e = 4;
+                    else erro = true;
+                    break;
+                
+                case 7:
+                    if (c == 'b') e = 8;
+                    else if (c == 'a') e = 5;
                     else erro = true;
                     break;
                     
-                case 9:
-                    erro = true;
+                case 8:
+                    if (c == 'b') e = 4;
+                    else if (c == 'a') e = 5;
+                    else erro = true;
                     break;
             }
         }
         
-        if(erro || (e != 9)) {
+        if(erro || (e != 8)) {
             return false;
         } else {
             return true;

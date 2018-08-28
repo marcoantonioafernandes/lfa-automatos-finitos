@@ -11,6 +11,7 @@ import iftm.ec.lfa.c.C;
 import iftm.ec.lfa.d.D;
 import iftm.ec.lfa.e.E;
 import iftm.ec.lfa.f.F;
+import iftm.ec.lfa.g.G;
 import iftm.ec.lfa.h.H;
 import iftm.ec.lfa.i.I;
 import iftm.ec.lfa.j.J;
@@ -157,6 +158,7 @@ public class Home extends javax.swing.JFrame {
                 break;
                 
             case "G":
+                correto = G.avaliar(campoSentenca.getText());
                 break;
             
             case "H":
