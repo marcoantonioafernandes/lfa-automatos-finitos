@@ -21,30 +21,35 @@ public class F {
             
             switch(e){
                 case 1:
-                    if(c == 'a') e = 2;
-                    else if(e != 'a') e = 5;
+                    if(c == 'b') e = 2;
+                    else if(c == 'a') e = 4;
+                    else e = 6;
                     break;
                 case 2:
-                    if(c == 'a') e = 1;
-                    else if(c == 'b') e = 3;
-                    else erro = true;
+                    if(c == 'b') e = 3;
+                    else e = 6;
                     break;
                 case 3:
-                    if(c == 'b') e = 4;
-                    else if(c == 'a') e = 5;
+                    if(c == 'b') e = 2;
+                    else e = 6;
                     break;
                 case 4:
-                    if(c == 'b') e = 3;
-                    else if(c == 'a') e = 5;
-                    else erro = true;
+                    if(c == 'a') e = 5;
+                    else if(c == 'b') e = 6;
+                    else e = 6;
                     break;
                 case 5:
+                    if(c == 'a') e = 4;
+                    else if(c == 'b') e = 2;
+                    else e = 6;
+                    break;
+                case 6:
                     erro = true;
                     break;
             }
         }
         
-        if(erro || (e != 2 && e != 4)) return false;
+        if(erro || e != 2 ) return false;
         else return true;
         
     }

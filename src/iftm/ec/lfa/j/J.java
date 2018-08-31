@@ -20,35 +20,54 @@ public class J {
             
             switch(e){
                 case 1:
-                    if(c == '+' || c == '-') e = 2;
-                    else e = 7;
+                    if(Character.isDigit(c)) e = 3;
+                    else if(c == '+' || c == '-') e = 2;
+                    else e = 11;
                     break;
                 case 2:
                     if(Character.isDigit(c)) e = 3;
-                    else e = 7;
+                    else e = 11;
                     break;
                 case 3:
-                    if(c == 'e') e = 4;
-                    else if(c == ',') e = 6;
-                    else if(!Character.isDigit(c)) e = 7;
+                    if(c == ',') e = 4;
+                    else if(c == 'e') e = 6;
+                    else if(!Character.isDigit(c)) e = 11;
                     break;
                 case 4:
-                    if(c == '+' || c == '-') e = 5;
-                    else e = 7;
+                    if(Character.isDigit(c)) e = 5;
+                    else e = 11;
                     break;
                 case 5:
-                    if(!Character.isDigit(c)) e = 7;
+                    if(c == 'e') e = 6;
+                    else if(!Character.isDigit(c)) e = 11;
                     break;
                 case 6:
-                    if(!Character.isDigit(c)) e = 7;
+                    if(Character.isDigit(c)) e = 7;
+                    else if(c == '+' || c == '-') e = 8;
+                    else e = 11;
                     break;
                 case 7:
+                    if(c == ',') e = 9;
+                    else if(!Character.isDigit(c)) e = 11;
+                    break;
+                case 8:
+                    if(Character.isDigit(c)) e = 7;
+                    else e = 11;
+                    break;
+                case 9:
+                    if(Character.isDigit(c)) e = 10;
+                    else e = 11;
+                    break;
+                case 10:
+                    if(!Character.isDigit(c)) e = 11;
+                    break;
+                case 11:
                     erro = true;
                     break;
             }
         }
         
-        if(erro || (e != 3 && e != 6 && e!= 5)) return false;
+        if(erro || (e != 3 && e != 5 && e!= 7 && e != 10)) return false;
         else return true;
         
     }

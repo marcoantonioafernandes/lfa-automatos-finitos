@@ -22,30 +22,46 @@ public class D {
             switch(e){
                 case 1:
                     if(c == 'b') e = 2;
-                    else if(e != 'a') erro = true;
+                    else if(c != 'a') e = 9;
                     break;
                 case 2:
                     if(c == 'a') e = 3;
-                    else if(c == 'b') e = 1;
-                    else erro = true;
-                    break;
+                    else if(c != 'b') e = 9;
+                    break;    
                 case 3:
                     if(c == 'b') e = 4;
                     else if(c == 'a') e = 1;
-                    else erro = true;
+                    else e = 9;
                     break;
                 case 4:
                     if(c == 'a') e = 5;
-                    else if(c == 'b') e = 1;
-                    else erro = true;
+                    else if(c == 'b') e = 2;
+                    else e = 9;
                     break;
                 case 5:
-                    if(c != 'a' && c != 'b') erro = true;
+                    if(c == 'b') e = 6;
+                    else if(c != 'a') e = 9;
+                    break;
+                case 6:
+                    if(c == 'a') e = 7;
+                    else if(c != 'b') e = 9;
+                    break;
+                case 7:
+                    if(c == 'a') e = 5;
+                    else if(c == 'b') e = 8;
+                    else e = 9;
+                    break;
+                case 8:
+                    if(c == 'b') e = 6;
+                    else e = 9;
+                    break;
+                case 9:
+                    erro = true;
                     break;
             }
         }
         
-        if(erro || (e != 5)) return false;
+        if(erro || (e == 9)) return false;
         else return true;
         
     }
